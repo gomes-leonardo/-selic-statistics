@@ -29,7 +29,8 @@ const App = () => {
         className={`bg-primary ${styles.paddingX} mt-[90px] ${styles.flexStart}`}
       >
         <div
-          className={`${styles.boxWidth} text-white lg:flex lg:flex-row lg:space-x-5`}
+          style={{ borderRadius: '8px' }}
+          className={`${styles.boxWidth} text-white lg:flex lg:flex-row lg:space-x-5 p-[30px] bg-[#070915] box-card `}
         >
           <ProjectionChart />
           <HistoryChart />

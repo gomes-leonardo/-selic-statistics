@@ -6,9 +6,18 @@ import Reveal from '../Reveal'
 const HistoryChart = () => {
   const backgroundColor = '#070A15'
   const apiUrl =
-    'https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados?formato=json&dataInicial=01/01/2023&dataFinal=31/12/2023://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados?formato=json&dataInicial=01/01/2023&datafinal=31/12/2023'
+    'https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados?formato=json&dataInicial=01/01/2023&dataFinal=31/12/2023'
 
   const [chartData, setChartData] = useState([])
+  const [chartType, setChartType] = useState<'line' | 'bar' | 'area'>('line')
+
+  const handleToggleChartType = () => {
+    setChartType((prevType) => {
+      if (prevType === 'line') return 'bar'
+      else if (prevType === 'bar') return 'area'
+      else return 'line'
+    })
+  }
 
   useEffect(() => {
     axios
@@ -32,6 +41,9 @@ const HistoryChart = () => {
       id: 'projection-chart',
       type: 'line',
       background: backgroundColor,
+      toolbar: {
+        show: false,
+      },
       foreColor: '#FFFFFF',
       animations: {
         enabled: true,
@@ -47,6 +59,7 @@ const HistoryChart = () => {
         },
       },
     },
+
     title: {
       text: 'Histórico mensal da Taxa Selic - 2023',
       align: 'center',
@@ -94,6 +107,7 @@ const HistoryChart = () => {
       },
     },
     legend: {
+      show: true,
       position: 'top',
       horizontalAlign: 'left',
       offsetY: -20,
@@ -102,7 +116,7 @@ const HistoryChart = () => {
         height: 12,
         strokeWidth: 0,
         strokeColor: '#FFFFFF',
-        fillColors: ['#4CAF50', '#4CAF50'],
+        fillColors: ['#047CD8', '#4CAF50'],
       },
       itemMargin: {
         horizontal: 10,
@@ -127,9 +141,15 @@ const HistoryChart = () => {
         <ReactApexChart
           options={options}
           series={series}
-          type="bar"
+          type={chartType as 'line' | 'bar' | 'area' | undefined}
+          width="100%"
           height={450}
         />
+      </Reveal>
+      <Reveal>
+        <div className=" text-center align-center w-[50%] p-[8px] px-4 bg-discount-gradient rounded-[10px] mb-2 cursor-pointer hover:scale-105 transition-all m-auto">
+          <button onClick={handleToggleChartType}>Alternar Gráfico</button>
+        </div>
       </Reveal>
     </div>
   )

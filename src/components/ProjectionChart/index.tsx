@@ -1,16 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactApexChart from 'react-apexcharts'
 import './ProjectionChart.css'
 import Reveal from '../Reveal'
 
 const ProjectionChart: React.FC = () => {
   const backgroundColor = '#070A15'
+  const [chartType, setChartType] = useState<'line' | 'bar' | 'radar'>('line')
+
+  const handleToggleChartType = () => {
+    setChartType((prevType) => {
+      if (prevType === 'line') return 'bar'
+      else if (prevType === 'bar') return 'radar'
+      else return 'line'
+    })
+  }
 
   const options: ApexCharts.ApexOptions = {
     chart: {
       id: 'projection-chart',
       type: 'line',
       background: backgroundColor,
+      toolbar: {
+        show: false,
+      },
       foreColor: '#FFFFFF',
       animations: {
         enabled: true,
@@ -123,9 +135,14 @@ const ProjectionChart: React.FC = () => {
         <ReactApexChart
           options={options}
           series={series}
-          type="line"
+          type={chartType as 'line' | 'bar' | 'radar' | undefined}
           height={450}
         />
+      </Reveal>
+      <Reveal>
+        <div className=" text-center align-center w-[50%] p-[8px] px-4 bg-discount-gradient rounded-[10px] mb-2 cursor-pointer hover:scale-105 transition-all m-auto">
+          <button onClick={handleToggleChartType}>Alternar Gráfico</button>
+        </div>
       </Reveal>
     </div>
   )

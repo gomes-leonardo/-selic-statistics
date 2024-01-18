@@ -11,9 +11,7 @@ interface StatsItem {
 
 const Stats: React.FC = () => {
   return (
-    <section
-      className={`${styles.flexCenter} flex-row flex-wrap sm:mb-20 mb-6`}
-    >
+    <section className={`${styles.flexCenter} flex-row flex-wrap sm:mb-5 mb-6`}>
       {statsData.map((stat: StatsItem) => (
         <div
           key={stat.id}
