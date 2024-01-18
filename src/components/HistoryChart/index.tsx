@@ -59,6 +59,9 @@ const HistoryChart = () => {
         },
       },
     },
+    tooltip: {
+      theme: 'dark',
+    },
 
     title: {
       text: 'Histórico mensal da Taxa Selic - 2023',
