@@ -1,0 +1,42 @@
+
+.apexcharts-tooltip {
+
+    background-color: black !important; 
+    color: #fff !important; 
+  }
+  
+
+  .apexcharts-tooltip-title {
+    color: #fff !important;
+  }
+  
+  .apexcharts-tooltip-text-value {
+    color: #fff !important; 
+  }
+
+  .apexcharts-menu {
+    background-color: black!important; 
+    color: #fff !important;
+    border: none;
+    border-radius: 9px; 
+    text-align: center;
+  }
+  
+  .apexcharts-menu-item {
+    background-color: black !important; 
+    color: #fff !important; 
+
+   
+  }
+
+  .apexcharts-menu-item:hover{
+    background-color: white !important;
+    color: black !important;
+    transition: all 0.2s ease-in !important;
+
+  }
+
+
+
+  
+  
