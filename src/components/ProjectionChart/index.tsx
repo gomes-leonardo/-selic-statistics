@@ -5,20 +5,20 @@ import Reveal from '../Reveal'
 
 const ProjectionChart: React.FC = () => {
   const backgroundColor = '#070A15'
-  const [chartType, setChartType] = useState<'line' | 'bar' | 'radar'>('line')
+  const [chartType, setChartType] = useState<'bar' | 'line' | 'radar'>('line')
 
   const handleToggleChartType = () => {
     setChartType((prevType) => {
-      if (prevType === 'line') return 'bar'
-      else if (prevType === 'bar') return 'radar'
-      else return 'line'
+      if (prevType === 'bar') return 'line'
+      else if (prevType === 'line') return 'radar'
+      else return 'bar'
     })
   }
 
   const options: ApexCharts.ApexOptions = {
     chart: {
       id: 'projection-chart',
-      type: 'line',
+      type: chartType,
       background: backgroundColor,
       toolbar: {
         show: false,
@@ -70,17 +70,17 @@ const ProjectionChart: React.FC = () => {
     xaxis: {
       categories: [
         'Jan',
-        'Feb',
+        'Fev',
         'Mar',
-        'Apr',
-        'May',
+        'Abr',
+        'Mai',
         'Jun',
         'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
+        'Ago',
+        'Set',
+        'Out',
         'Nov',
-        'Dec',
+        'Dez',
       ],
       labels: {
         style: {
@@ -139,7 +139,7 @@ const ProjectionChart: React.FC = () => {
         <ReactApexChart
           options={options}
           series={series}
-          type={chartType as 'line' | 'bar' | 'radar' | undefined}
+          type={chartType as 'bar' | 'line' | 'radar' | undefined}
           height={450}
         />
       </Reveal>

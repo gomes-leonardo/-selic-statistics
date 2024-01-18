@@ -23,9 +23,7 @@ const Table = ({ data }) => {
           <thead>
             <tr>
               <th className="py-5 px-4  text-start">Mês</th>
-              <th className="py-5 px-4  text-start">IPCA no Mês</th>
-              <th className="py-5 px-4  text-start">IPCA ACUMULADO 12 MESES</th>
-              <th className="py-5 px-4  text-start">IPCA ACUMULADO 2024</th>
+              <th className="py-5 px-4  text-start">Inflação</th>
             </tr>
           </thead>
           <tbody>
@@ -37,8 +35,6 @@ const Table = ({ data }) => {
                 }
               >
                 <td className="py-2 px-4 ">{item.month}</td>
-                <td className="py-2 px-4 ">{item.inflationRate}</td>
-                <td className="py-2 px-4 ">{item.inflationRate}</td>
                 <td className="py-2 px-4 ">{item.inflationRate}</td>
               </tr>
             ))}

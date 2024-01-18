@@ -39,7 +39,7 @@ const HistoryChart = () => {
   const options: ApexCharts.ApexOptions = {
     chart: {
       id: 'projection-chart',
-      type: 'line',
+      type: chartType,
       background: backgroundColor,
       toolbar: {
         show: false,
@@ -91,17 +91,17 @@ const HistoryChart = () => {
     xaxis: {
       categories: [
         'Jan',
-        'Feb',
+        'Fev',
         'Mar',
-        'Apr',
-        'May',
+        'Abr',
+        'Mai',
         'Jun',
         'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
+        'Ago',
+        'Set',
+        'Out',
         'Nov',
-        'Dec',
+        'Dez',
       ],
       labels: {
         style: {

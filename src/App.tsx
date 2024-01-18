@@ -1,33 +1,21 @@
 import React from 'react'
 import styles from './style'
-import NavBar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
 import ProjectionChart from './components/ProjectionChart'
 import HistoryChart from './components/HistoryChart'
 import Footer from './components/Footer'
 import Table from './components/Table'
+import Header from './components/Header'
+import { getMockData } from './components/service'
 const App = () => {
-  const inflationData = [
-    { month: 'Jan', inflationRate: 3.5 },
-    { month: 'Feb', inflationRate: 2.8 },
-    { month: 'Mar', inflationRate: 3.2 },
-    { month: 'Abr', inflationRate: 4.3 },
-    { month: 'Mai', inflationRate: 1.8 },
-    { month: 'Jun', inflationRate: 5.2 },
-    { month: 'Jul', inflationRate: 5.5 },
-    { month: 'Ago', inflationRate: 6.8 },
-    { month: 'Set', inflationRate: 4.2 },
-    { month: 'Out', inflationRate: 3.5 },
-    { month: 'Nov', inflationRate: 3.1 },
-    { month: 'Dez', inflationRate: 3.5 },
-  ]
+  const inflationData = getMockData()
 
   return (
     <div className="bg-primary w-full overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
-          <NavBar />
+          <Header />
         </div>
       </div>
 
