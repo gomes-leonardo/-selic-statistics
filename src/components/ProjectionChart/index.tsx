@@ -38,6 +38,10 @@ const ProjectionChart: React.FC = () => {
         },
       },
     },
+    tooltip: {
+      theme: 'dark',
+    },
+
     title: {
       text: 'Projeção da Taxa Selic - 2024',
       align: 'center',
