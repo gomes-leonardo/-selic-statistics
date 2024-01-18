@@ -5,8 +5,8 @@ import styles from '../../style'
 const Footer = () => {
   return (
     <footer className={`${styles.paddingY} text-white bg-[#070915]`}>
-      <div className="container mx-auto flex justify-center items-center gap-[25px]">
-        <p className={`${styles.paragraph} font-poppins`}>
+      <div className="container mx-auto flex flex-col md:flex-row justify-center items-center md:items-center gap-[25px]">
+        <p className={`${styles.paragraph} font-poppins mb-4 md:mb-0`}>
           © 2024 Leonardo Rodrigues Gomes
         </p>
         <div className="flex space-x-4">
