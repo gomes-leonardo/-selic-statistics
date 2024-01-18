@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Stats from './components/Stats'
 import ProjectionChart from './components/ProjectionChart'
 import HistoryChart from './components/HistoryChart'
+import Footer from './components/Footer'
 const App = () => {
   return (
     <div className="bg-primary w-full overflow-hidden">
@@ -30,12 +31,14 @@ const App = () => {
       >
         <div
           style={{ borderRadius: '8px' }}
-          className={`${styles.boxWidth} text-white lg:flex lg:flex-row lg:space-x-5 p-[30px] bg-[#070915] box-card `}
+          className={`${styles.boxWidth} text-white lg:flex lg:flex-row lg:space-x-5 p-[30px] bg-[#070915] box-card mb-32 `}
         >
           <ProjectionChart />
           <HistoryChart />
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }
