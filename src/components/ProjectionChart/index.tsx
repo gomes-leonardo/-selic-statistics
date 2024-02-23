@@ -15,6 +15,21 @@ const ProjectionChart: React.FC = () => {
     })
   }
 
+  const months = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro',
+  ]
+
   const options: ApexCharts.ApexOptions = {
     chart: {
       id: 'projection-chart',
